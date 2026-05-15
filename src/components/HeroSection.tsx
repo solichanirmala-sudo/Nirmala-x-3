@@ -27,7 +27,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="mb-8 flex justify-center"
           >
-            <div className="w-56 h-56 md:w-80 md:h-80 rounded-full border-4 border-purple-700 overflow-hidden shadow-2xl mt-16 lg:mt-0 flex-shrink-0">
+            <div className="w-56 h-56 md:w-80 md:h-80 rounded-full border-4 border-red-800 overflow-hidden shadow-2xl mt-16 lg:mt-0 flex-shrink-0">
               <img
                 src="boboiboymala.jpg"
                 alt="Kris Deltarune"
@@ -64,7 +64,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl font-display text-purple-500 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl font-display text-red-600 mb-8 max-w-2xl mx-auto"
           >
             Bertumbuh, belajar, dan menjadi lebih baik setiap harinya.
           </motion.p>
