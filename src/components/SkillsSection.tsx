@@ -1,26 +1,24 @@
 import { motion } from 'framer-motion';
 
 const skills = {
-  frontend: [
-    { name: 'React', level: 95 },
-    { name: 'TypeScript', level: 90 },
-    { name: 'Next.js', level: 88 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'Vue.js', level: 75 },
+  arabic: [
+    { name: 'Listening', level: 80 },
+    { name: 'Reading', level: 90 },
+    { name: 'Speaking', level: 90 },
+    { name: 'Writing', level: 90 },
+    { name: 'Vocabulary', level: 90 },
   ],
-  backend: [
-    { name: 'Node.js', level: 90 },
-    { name: 'Python', level: 85 },
-    { name: 'PostgreSQL', level: 88 },
-    { name: 'MongoDB', level: 82 },
-    { name: 'GraphQL', level: 78 },
+  science: [
+    { name: 'Biologi', level: 80 },
+    { name: 'Fisika', level: 85 },
+    { name: 'Kimia', level: 85 },
+    { name: 'Metode Ilmiah', level: 80 },
   ],
-  tools: [
-    { name: 'Git', level: 95 },
-    { name: 'Docker', level: 80 },
-    { name: 'AWS', level: 75 },
-    { name: 'Figma', level: 85 },
-    { name: 'CI/CD', level: 82 },
+  ips: [
+    { name: 'Sejarah', level: 90 },
+    { name: 'Geografi', level: 80 },
+    { name: 'Ekonomi', level: 85 },
+    { name: 'Sosiologi', level: 95 },
   ],
 };
 
@@ -35,7 +33,7 @@ function SkillBar({ name, level, delay }: { name: string; level: number; delay: 
     >
       <div className="flex justify-between items-center">
         <span className="font-medium">{name}</span>
-        <span className="text-sm text-muted-foreground">{level}%</span>
+        <span className="text-sm text-red-600">{level}%</span>
       </div>
       <div className="h-2 bg-muted rounded-full overflow-hidden">
         <motion.div
@@ -52,8 +50,8 @@ function SkillBar({ name, level, delay }: { name: string; level: number; delay: 
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 md:py-32">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,15 +59,15 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium mb-2 block">Keahlian</span>
+          <span className="text-primary font-medium mb-2 block">Keahlian Akademik</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Skills &amp; Teknologi
+            Skills & Kompetensi
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Frontend */}
+          {/* Bahasa Arab */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -79,18 +77,18 @@ export default function SkillsSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🎨</span>
+                <span className="text-2xl">🕌</span>
               </div>
-              <h3 className="font-display text-xl font-bold">Frontend</h3>
+              <h3 className="font-display text-xl font-bold">Bahasa Arab</h3>
             </div>
             <div className="space-y-4">
-              {skills.frontend.map((skill, index) => (
+              {skills.arabic.map((skill, index) => (
                 <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
               ))}
             </div>
           </motion.div>
 
-          {/* Backend */}
+          {/* IPA (Science) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,18 +98,18 @@ export default function SkillsSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">⚙️</span>
+                <span className="text-2xl">🧪</span>
               </div>
-              <h3 className="font-display text-xl font-bold">Backend</h3>
+              <h3 className="font-display text-xl font-bold">IPA</h3>
             </div>
             <div className="space-y-4">
-              {skills.backend.map((skill, index) => (
+              {skills.science.map((skill, index) => (
                 <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
               ))}
             </div>
           </motion.div>
 
-          {/* Tools */}
+          {/* IPS */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -121,12 +119,12 @@ export default function SkillsSection() {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 rounded-xl bg-primary/10">
-                <span className="text-2xl">🛠️</span>
+                <span className="text-2xl">🗺️</span>
               </div>
-              <h3 className="font-display text-xl font-bold">Tools &amp; Lainnya</h3>
+              <h3 className="font-display text-xl font-bold">IPS</h3>
             </div>
             <div className="space-y-4">
-              {skills.tools.map((skill, index) => (
+              {skills.ips.map((skill, index) => (
                 <SkillBar key={skill.name} {...skill} delay={index * 0.1} />
               ))}
             </div>
